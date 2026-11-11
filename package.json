@@ -1,0 +1,51 @@
+{
+  "name": "bghub",
+  "version": "1.0.0",
+  "description": "BGhub — AI background removal and product image studio that runs in your browser",
+  "scripts": {
+    "assets": "node scripts/prepare-assets.mjs",
+    "dev": "npm run assets && vite",
+    "build": "npm run assets && tsc -b && vite build && node scripts/check-dist.mjs",
+    "preview": "vite preview --port 4173 --strictPort",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name bghub"
+  },
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "jsdom": "^30.1.3",
+    "onnxruntime-node": "^1.30.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.0",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "fast-png": "^8.0.0",
+    "fflate": "^0.8.3",
+    "libheif-js": "^1.23.5",
+    "lucide-react": "^1.61.0",
+    "onnxruntime-web": "^1.30.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "utif": "^3.1.0"
+  },
+  "private": true
+}
